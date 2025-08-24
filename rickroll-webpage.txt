@@ -1,0 +1,8 @@
+REM Opens Rick Astley's Never Gonna Give You Up on youtube
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+STRING start "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+ENTER
